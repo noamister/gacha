@@ -2,24 +2,57 @@
 
 {% block content %}
 
-	<article>
-		<section id="sec1">
-			<h1>ヘッダータイトル：だがしガチャ</h1>
-		</section>
+	<header id="sec1">
+		<h1>ガチャでおかしのさんすう</h1>
+	</header>
 
-		<section id="sec2">
-			<h1>なんえんのガチャをまわす？</h1>
+	<article id="sec2">
+	
+		<h1>おかしガチャで100円玉なんこ使う？</h1>
+		<img src="../static/img/gacha.png" alt="ガチャ画像">
 
-		</section>
+		<div class="flex-container">
+			<div class="flex-item">１こ</div>
+			<div class="flex-item">２こ</div>
+			<div class="flex-item">３こ</div>
+		</div>
 
-		<section id="sec3">
-			<h1>ガチャからでてきたのはこのおかし！</h1>
-		</section>
+		<h1>〇〇〇円でかえるおかしは・・・</h1>
+	
+		<div class="flex-container2">
+			<div class="flex-item2">
+				<p> 商品名 × ●円</p>
+				<p> 商品画像 × ●個</p>
+				<p> 商品名 × ●円</p>
+				<p> 商品画像 × ●個</p>
+			</div>
+		</div>
 
-		<section id="sec4">
-			<h1>もどってくるお釣りはガチャからでてきたのはこのおかし！</h1>
+		<div class="flex-container2">
+			<div class="flex-item2">
+				おかしは
+				<p>   ● 円</p>
+				<p> + ● 円</p>
+				<p> --------</p>
+				<p> ●円</p>
 
-		</section>
+			</div>
+
+			<div class="flex-item2">おつりは
+				<p>   ● 円</p>
+				<p> - ● 円</p>
+				<p> --------</p>
+				<p> ●円</p>
+
+			</div>
+		</div>
+
+
+		<h1>おつりもどうぞ！</h1>
+		<img  class="trayImg" src="../static/img/tray.png" alt="トレイ画像">
+
+		<a href="/calc" class="btn-flat-double-border">▶︎こっちでおかいもののけいさんもできるよ！</a>
+
 	</article>
 
 {% endblock %}

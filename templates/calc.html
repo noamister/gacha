@@ -2,7 +2,39 @@
 
 {% block content %}
 
-<p>ここはcalc.html お買い物計算実装場所だよ</p>
+<header id="sec1">
+    <h1>おかいものけいさん</h1>
+</header>
+
+<article id="sec2">
+
+    <h1>おかいものをして、おつりをうけとろう！</h1>
+    <div class="flex-item2">
+        <p>おみせのひとにわたすおかね ●●円 百 百</p>
+        <p></p>
+        <p>かうもののねだん ●●円 </p>
+    </div>
+
+    <a href="#return" class="btn-flat-double-border">▶︎おつりをけいさん！</a>
+
+    <h1 id="return">うけとるお釣りは・・・？</h1>
+
+        <div class="flex-item2">おつりは
+            <p>   ● 円</p>
+            <p> - ● 円</p>
+            <p> --------</p>
+            <p> ●円</p>
+        </div>
+
+        <div class="flex-item2">
+            <p>⑩ ⑩</p>            
+            <img  class="trayImg" src="../static/img/tray.png" alt="トレイ画像">
+        </div>
+
+   
+    <a href="../" class="btn-flat-double-border">▶︎もういちど、ガチャをまわす！</a>
+
+</article>
 
 
 

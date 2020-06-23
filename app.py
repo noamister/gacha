@@ -33,12 +33,17 @@ def gacha(money):
         # fetchoneはタプル型
     candidate = c.fetchall()
     conn.close()
-        # candidateの中身を確認 ターミナルに出力されるよ。
-    print("candidate の中身") 
-    print(candidate)
-
-    menu = candidate
-    menu = [('うまい棒', 10, 'img001'), ('ブラックサンダー', 30, 'img002'), ('ココアシガレット', 30, 'img003')]
+         # if len(candidate) == 0:
+    #     break
+    
+        # Pythonでリストからランダムに要素を選択するchoice,   
+        # https://note.nkmk.me/python-random-choice-sample-choices/
+    food = random.choice(candidate)
+        # 残ったお金は
+    budget = budget - int(food[1])
+        # 空のmenuリストを用意
+    menu = []
+    menu.append(food)
     #menu→item、price、img、count、eachSum(種類別合計金額)、を取り出す
     print("menu の中身")    
     cum = menu.count('うまい棒')
@@ -49,7 +54,6 @@ def gacha(money):
     eachSumCbl = cbl*30
     eachSumCoc = coc*30
     sum = eachSumCum + eachSumCbl + eachSumCoc
-    budget = money - sum
     # [('うまい棒', 10, 'img001'), ('ブラックサンダー', 30, 'img002'), ('ココアシガレット', 30, 'img003')]
     # こんなのがcandidateの中身
 

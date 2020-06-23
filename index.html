@@ -23,6 +23,12 @@
 			<div class="flex-item2">
 				<p> {{  item  }} {{  price  }}円</p>
 				<p> {{  img  }} {{  count  }}個</p>
+				<p> うまい棒 １０円</p>
+				<p> imgpath {{  cum  }}個</p>
+				<p> ブラックサンダー ３０円</p>
+				<p> imgpath {{  cbl  }}個</p>
+				<p> ココアシガレット ３０円</p>
+				<p> imgpath {{  cco  }}個</p>
 				<!--↑こいつを複製したい-->
 			</div>
 		</div>
@@ -30,16 +36,17 @@
 		<div class="flex-container2">
 			<div class="flex-item2">
 				おかしは
-				<p>   {{  eachSum(price)  }}円</p>
-				<p> +{{  eachSum(price)  }}円</p>
+				<p>   {{  cum  }}円</p>
+				<p>   {{  cbl  }}円</p>
+				<p> +{{  cco  }}円</p>
 				<p> --------</p>
-				<p> {{  sum(price)  }}円</p>
+				<p> {{  sum  }}円</p>
 
 			</div>
 
 			<div class="flex-item2">おつりは
 				<p>   {{  money  }} 円</p>
-				<p> -{{  sum(price)  }} 円</p>
+				<p> -{{  sum  }} 円</p>
 				<p> --------</p>
 				<p> {{ budget }}円</p>
 

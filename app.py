@@ -14,14 +14,57 @@ from datetime import datetime
 # ガチャトップページ
 @app.route('/')
 def index():
+
     return render_template('index.html')
 
-    # データベースに接続
+# ガチャ後ページ
+@app.route('/gacha/<int:money>',methods=["GET", "POST"])
+def gacha(money):
+    money = money #ボタンから取ってくる値 100 or 200 or 300
+    budget = money #残金 最初はmoneyと同じ 
+
+#    while budget > 0:
+
+       # データベースに接続
     conn = sqlite3.connect('service.db')
     c = conn.cursor()
-    c.execute("select bbs where id = ?")
+    c.execute("select * from items where price <= ?",(budget,))
     conn.commit()
+        # fetchoneはタプル型
+    candidate = c.fetchall()
     conn.close()
+        # candidateの中身を確認 ターミナルに出力されるよ。
+    print("candidate の中身")    
+    print(candidate)
+
+    menu = candidate
+    
+    print("menu の中身")    
+    print(menu)
+        # [('うまい棒', 10, 'img001'), ('ブラックサンダー', 30, 'img002'), ('ココアシガレット', 30, 'img003')]
+        # こんなのがcandidateの中身
+    return render_template('gacha.html', money = money, menu = menu)
+
+
+
+        #   user_id = session["user_id"]
+        # conn = sqlite3.connect("flaskapp.db")
+        # c = conn.cursor()
+
+        # # ゴグインしているuser nameを取得してuser_nameに代入
+        # c.execute("select name from user where id = ?", (user_id,))
+        # user_name = c.fetchone()[0]
+
+        # c.execute("select id, task from task where user_id = ?", (user_id,)) # task全てDBから取得
+        # task_list = [] #このtaskリストは最初は空だが、for文で埋まっていく
+        # for row in c.fetchall():  #fetchaiiは多次元配列（リストの中のリスト）でくる。わかりにくい。
+        #     # インデックス管理わかりにくい => idやtaskというkey,キーバリューで管理するためにデータの整形
+        #     task_list.append({"id":row[0], "task":row[1]}) #appendでその後ろの（）内のデータを追加する。
+        # c.close()
+        # print(task_list)
+        # return render_template("task_list.html", user_name = user_name, task_list = task_list) #forループで追加したtask_listを、htmlに渡す。
+        # # return "タスクが取れたかターミナルで確認"
+ 
 
 # お買い物計算ページ
 @app.route('/calc',methods=["GET", "POST"])

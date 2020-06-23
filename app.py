@@ -27,46 +27,61 @@ def gacha(money):
         # 残っている金額
     budget = money # 残金 最初はmoneyと同じ 
 
-#    while budget > 0:
+    while budget > 0:
 
-       # データベースに接続
-    conn = sqlite3.connect('service.db')
-    c = conn.cursor()
-    c.execute("select * from items where price <= ?",(budget,))
-    conn.commit()
-        # fetchoneはタプル型 fetchall
-    candidate = c.fetchall()
-    conn.close()
+        # データベースに接続
+        conn = sqlite3.connect('service.db')
+        c = conn.cursor()
+        c.execute("select * from items where price <= ?",(budget,))
+        conn.commit()
+            # fetchoneはタプル型 fetchall
+        candidate = c.fetchall()
+        conn.close()
 
-    # if len(candidate) == 0:
-    #     break
-    
+        if len(candidate) == 0:
+            break
+        
         # Pythonでリストからランダムに要素を選択するchoice,   
         # https://note.nkmk.me/python-random-choice-sample-choices/
-    food = random.choice(candidate)
-        # 残ったお金は
-    budget = budget - int(food[1])
+        food = random.choice(candidate)
+        # 残ったお金は 残金-ranndam.choiceしたfoodの値段
+        budget = budget - int(food[1])
         # 空のmenuリストを用意
-    menu = []
-    menu.append(food)
+        menu = []
+        menu.append(food)
 
-    print("---")
-    print("money の中身 ガチャの予算")    
-    print(money)
-    print("candidate の中身 ガチャで選ばれる可能性があるのはこのなかのどれか！")    
-    print(candidate)
-    print("---")
-    print("menu の中身 ガチャで選ばれたお菓子はこれ！")    
-    print(menu)
-    print("残金は")
-    print(budget)
-    print("---")
+    # コンソールに出力しながら開発
+        print("---")
+        print("投入金額 money", end=':')    
+        print(money)
+        print("候補リスト candidate", end=':')    
+        print(candidate)
+        print("選ばれたひとつ food", end=':')    
+        print(food)
+        print("選ばれたリスト menu", end=':')    
+        print(menu)
+        print("残金 budget", end=':')
+        print(budget)
+        print("---")
 
-
-#    while budget > 0 ループを抜けた後で
-
+    #    while budget > 0 ループを抜けた後で
     # お釣り計算
     budget = money - budget
+
+    # コンソールに出力しながら開発
+    # print("---")
+    # print("money")    
+    # print(money)
+    # print("---")
+    # print("candidate")    
+    # print(candidate)
+    # print("---")
+    # print("menu")    
+    # print(menu)
+    # print("---")
+    # print("残金")
+    # print(budget)
+    # print("---")
 
     return render_template('gacha.html', money = money, menu = menu, budget = budget)
 

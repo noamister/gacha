@@ -38,12 +38,13 @@ def gacha(money):
     print(candidate)
 
     menu = candidate
-
+    menu = [('うまい棒', 10, 'img001'), ('ブラックサンダー', 30, 'img002'), ('ココアシガレット', 30, 'img003')]
     #menu→item、price、img、count、eachSum(種類別合計金額)、を取り出す
     print("menu の中身")    
     cum = menu.count('うまい棒')
     cbl = menu.count('ブラックサンダー')
     cco = menu.count('ココアシガレット')
+    cgr = menu.count('ガリガリ君')
     eachSumCum = cum*10
     eachSumCbl = cbl*30
     eachSumCoc = coc*30
@@ -52,7 +53,7 @@ def gacha(money):
     # [('うまい棒', 10, 'img001'), ('ブラックサンダー', 30, 'img002'), ('ココアシガレット', 30, 'img003')]
     # こんなのがcandidateの中身
 
-    return render_template('gacha.html',cum = cum, cbl = cbl, cco = cco, money = money, sum = sum, budget = budget)
+    return render_template('gacha.html', cum = cum, cbl = cbl, cco = cco, money = money, sum = sum, budget = budget)
 
 
 

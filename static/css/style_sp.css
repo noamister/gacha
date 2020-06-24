@@ -84,7 +84,7 @@ article h1 {
 /* 子要素(アイテム) */
 .flex-item {
 	margin: 10px auto;
-	padding: 5px 20px;
+	padding: 5px;
 	box-sizing: border-box;
 	background-color: #fff;
 	border: 5px solid tomato;
@@ -97,6 +97,10 @@ article h1 {
   background: tomato;
 }
 
+.yen100 {
+	position: relative;
+	/* width: 50px; */
+}
 
 /* お菓子と計算表示場所のflexbox */
 /* 親要素(コンテナ) */
@@ -118,7 +122,11 @@ article h1 {
 	color: #000;
 }
 
+.foodImg {
+	width: 9%;
+	height: auto;
 
+}
 section {
 	padding: 50px 15px;
 	text-align: left;
@@ -132,7 +140,7 @@ section h1 {
 
 /* トレイ画像を大きく表示 */
 .trayImg {
-	position: relative;
+	position: center;
 	width: 50%;
 }
 
@@ -150,6 +158,25 @@ section h1 {
   .btn-flat-double-border:hover {
 	background: #0ef106;
   }
+
+
+
+/* ここからcalc画面 */
+
+.flex-item3 {
+	/* margin: 10px auto; */
+	padding: 5px 20px;
+	/* box-sizing: border-box; */
+	/* width: 100%; */
+	height: auto;
+	margin: 10px 20px;
+	background-color: #fff;
+	border: 2px solid tomato;
+	border-radius: 10px 10px 10px 10px;
+	color: #000;
+}
+
+
 
 /* 
 ここから下は使ってないよ。flex課題のコピペの残骸

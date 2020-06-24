@@ -8,7 +8,7 @@
 
 	<article id="sec2">
 	
-		<h1>おかしガチャで100円玉なんこ使う？</h1>
+		<h1>おかしガチャで 100円玉を なんこ つかう？</h1>
 		<img src="../static/img/gacha.png" alt="ガチャ画像">
 
 		<div class="flex-container">
@@ -32,28 +32,43 @@
 			</a>
 		</div>
 
-		<h1> {{ money }} 円でかえるおかしは・・・</h1>
+		<h1> {{ money }} 円で かえるおかしは・・・</h1>
 	
 		<div class="flex-container2">
 			<div class="flex-item2">
-                <p> {{  item  }} {{  price  }}円</p>
-				<p> {{  img  }} {{  count  }}個</p>
-				<p> うまい棒 １０円</p>
-				<p> imgpath {{  ci1  }}個</p>
-				<p> ブラックサンダー ３０円</p>
-				<p> imgpath {{  ci2  }}個</p>
-				<p> ココアシガレット ３０円</p>
-				<p> imgpath {{  ci3  }}個</p>
+                <!-- <p> {{  item  }} {{  price  }}円</p>
+				<p> {{  img  }} {{  count  }}個</p> -->
+                <p> うまいぼう  {{  ci1  }}個 X １０円 = {{  sumi1  }}円</p>
+                {% for i in list1 %}
+                    <img class="foodImg" src="/static/img/img001.png" alt="うまいぼうimg">
+                {% endfor %}
+
+                <p> ブラックサンダー   {{  ci2  }}個 X ３０円 = {{  sumi2  }}円</p>
+                {% for i in list2 %}
+                    <img class="foodImg" src="/static/img/img002.jpg" alt="ブラックサンダーimg">
+                {% endfor %}
+
+                <p> ココアシガレット   {{  ci3  }}個 X ３０円 = {{  sumi3  }}円</p>
+                {% for i in list3 %}
+                    <img class="foodImg" src="/static/img/img003.png" alt="ココアシガレットimg">
+                {% endfor %}
+
+                <p> ガリガリくん   {{  ci4  }}個 X ７５円 = {{  sumi4  }}円</p>
+                {% for i in list4 %}
+                    <img class="foodImg" src="/static/img/img004.jpg" alt="ガリガリ君img">
+                {% endfor %}
+                
 				<!--↑こいつを複製したい-->
 			</div>
 		</div>
 
 		<div class="flex-container2">
 			<div class="flex-item2">
-                おかしは                
+                おかしは ぜんぶで              
 				<p>   {{  sumi1  }}円</p>
 				<p>   {{  sumi2  }}円</p>
-				<p> +{{  sumi3  }}円</p>
+				<p>   {{  sumi3  }}円</p>
+				<p> + {{  sumi4  }}円</p>
 				<p> --------</p>
 				<p> {{  total  }}円</p>
 			</div>

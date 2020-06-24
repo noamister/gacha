@@ -48,7 +48,7 @@ def gacha(money):
         food = random.choice(candidate)
         # 残ったお金は 残金-ranndam.choiceしたfoodの値段
         budget = budget - int(food[1])
-        menu.append(list(food))
+        menu.append(food)
 
         # コンソールに出力しながら開発
         print("---ガチャループ中---")
@@ -74,11 +74,44 @@ def gacha(money):
     print(budget)
     print("---")
 
-    # ここからtannnoさんのコピペ
-    i1 = ['うまい棒', 10, 'img001']
-    i2 = ['ブラックサンダー', 30, 'img002']
-    i3 = ['ココアシガレット', 30, 'img003']
-    i4 = ['ガリガリ君', 70, 'img004']
+    # # データベースからitemを取ってくる タプルで
+    # conn = sqlite3.connect("service.db")
+    # c = conn.cursor()
+    # c.execute("select name, price, img from foods") # item全てDBから取得
+    # foods_tuple = c.fetchall() #このitemsタプル
+    # print(foods_tuple)
+    # c.close()
+
+    # food0 = foods_tuple[0]
+    # for food in foods_tuple:
+    # print(food)
+
+    # # データベースからitemを取ってくる リストで
+    # conn = sqlite3.connect("service.db")
+    # c = conn.cursor()
+    # c.execute("select id, name, price, img from foods") # item全てDBから取得
+    # foods_list = [] #このitems_listリストは最初は空だが、for文で埋まっていく
+    # for row in c.fetchall():  #fetchaiiは多次元配列（リストの中のリスト）でくる。わかりにくい。
+    #     # インデックス管理わかりにくい => idやtaskというkey,キーバリューで管理するためにデータの整形
+    #     foods_list.append({"id":row[0], "name":row[1], "price":row[2], "img":row[3] }) #appendでその後ろの（）内のデータを追加する。
+    # print(foods_list)
+    # c.close()
+
+    # 初期値０
+    sumi1 = 0
+    sumi2 = 0
+    sumi3 = 0
+    sumi4 = 0
+    list1=[]
+    list2=[]
+    list3=[]
+    list4=[]
+
+    # ここからtannnoさんのコピペ タプルに変更
+    i1 = ('うまい棒', 10, 'img001')
+    i2 = ('ブラックサンダー', 30, 'img002')
+    i3 = ('ココアシガレット', 30, 'img003')
+    i4 = ('ガリガリ君', 75, 'img004')
     ci1 = menu.count(i1)
     ci2 = menu.count(i2)
     ci3 = menu.count(i3)
@@ -86,17 +119,30 @@ def gacha(money):
     sumi1 = ci1*10
     sumi2 = ci2*30
     sumi3 = ci3*30
-    sumi4 = ci4*40
-
+    sumi4 = ci4*75
+ 
     #↓ここからprintで上を確認
     print(i1)
     print(ci1)
     print(sumi1)
     # ここまでtannnoさんのコピペ
 
+    for i in range(ci1):
+        list1.append(1)
+    print(list1)
+    for i in range(ci2):
+        list2.append(2)
+    print(list2)
+    for i in range(ci3):
+        list3.append(3)
+    print(list3)
+    for i in range(ci4):
+        list4.append(4)
+    print(list4)
+
     # gacha.html画面に値を渡す
     # return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total)
-    return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total, ci1 = ci1, ci2 = ci2, ci3 = ci3, ci4 = ci4, sumi1 = sumi1, sumi2 = sumi2, sumi3 = sumi3, sumi4 = sumi4)
+    return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total, ci1 = ci1, ci2 = ci2, ci3 = ci3, ci4 = ci4, sumi1 = sumi1, sumi2 = sumi2, sumi3 = sumi3, sumi4 = sumi4, list1 = list1, list2 = list2, list3 = list3, list4 = list4)
 
 
 

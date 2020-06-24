@@ -9,24 +9,30 @@
 <article id="sec2">
 
     <h1>おかいものをして、おつりをうけとろう！</h1>
-    <div class="flex-item2">
-        <p>おみせのひとにわたすおかね ●●円 百 百</p>
+    <div class="flex-item3">
+        <p>おみせのひとにわたすおかね 
+            <input type="number" value="{{money}}" name="c-money" >円
+        </p>
         <p></p>
-        <p>かうもののねだん ●●円 </p>
+        <p>かうもののねだん
+            <input type="number" value="{{total}}" name="c-total" >円
+        </p>
+
     </div>
 
     <a href="#return" class="btn-flat-double-border">▶︎おつりをけいさん！</a>
 
-    <h1 id="return">うけとるお釣りは・・・？</h1>
+    <h1 id="return">うけとるおつりは・・・？</h1>
 
-        <div class="flex-item2">おつりは
+        <div class="flex-item3">
+            <p>おつりは</p>
             <p>   ● 円</p>
             <p> - ● 円</p>
             <p> --------</p>
             <p> ●円</p>
         </div>
 
-        <div class="flex-item2">
+        <div class="flex-item3">
             <p>⑩ ⑩</p>            
             <img  class="trayImg" src="../static/img/tray.png" alt="トレイ画像">
         </div>

@@ -26,6 +26,8 @@ def gacha(money):
     money = money # ボタンから取ってくる値 100 or 200 or 300
         # 残っている金額
     budget = money # 残金 最初はmoneyと同じ 
+        # 空のmenuリストを用意
+    menu = []
 
     while budget > 0:
 
@@ -46,43 +48,32 @@ def gacha(money):
         food = random.choice(candidate)
         # 残ったお金は 残金-ranndam.choiceしたfoodの値段
         budget = budget - int(food[1])
-        # 空のmenuリストを用意
-        menu = []
-        menu.append(food)
+        menu.append(list(food))
 
-    # コンソールに出力しながら開発
-        print("---")
-        print("投入金額 money", end=':')    
-        print(money)
-        print("候補リスト candidate", end=':')    
+        # コンソールに出力しながら開発
+        print("---ガチャループ中---")
+        print("候補 candidate ", end=': ')    
         print(candidate)
-        print("選ばれたひとつ food", end=':')    
+        print("お菓子追加 food", end=': ')    
         print(food)
-        print("選ばれたリスト menu", end=':')    
-        print(menu)
-        print("残金 budget", end=':')
+        print("残金 budget   ", end=': ')
         print(budget)
-        print("---")
 
     #    while budget > 0 ループを抜けた後で
     # お釣り計算
     budget = money - budget
 
     # コンソールに出力しながら開発
-    # print("---")
-    # print("money")    
-    # print(money)
-    # print("---")
-    # print("candidate")    
-    # print(candidate)
-    # print("---")
-    # print("menu")    
-    # print(menu)
-    # print("---")
-    # print("残金")
-    # print(budget)
-    # print("---")
+    print("---ガチャループ終了---")
+    print("投入金額 money ", end=': ')    
+    print(money)
+    print("ガチャ結果 menu", end=': ')    
+    print(menu)
+    print("おつり budget ", end=': ')
+    print(budget)
+    print("---")
 
+    # gacha.html画面に値を渡す
     return render_template('gacha.html', money = money, menu = menu, budget = budget)
 
 

@@ -42,25 +42,28 @@ def gacha(money):
         # 残ったお金は
     budget = budget - int(food[1])
         # 空のmenuリストを用意
-    menu = []
-    menu.append(food)
+    #####menu = []
+    #####menu.append(food)
     #menu→item、price、img、count、eachSum(種類別合計金額)、を取り出す
-    print("menu の中身")    
-    cum = menu.count('うまい棒')
-    cbl = menu.count('ブラックサンダー')
-    cco = menu.count('ココアシガレット')
-    cgr = menu.count('ガリガリ君')
-    eachSumCum = cum*10
-    eachSumCbl = cbl*30
-    eachSumCoc = coc*30
-    sum = eachSumCum + eachSumCbl + eachSumCoc
+    
+    menu = [('うまい棒', 10, 'img001')]
+    i1 = ('うまい棒', 10, 'img001')
+    i2 = ('ブラックサンダー', 30, 'img002')
+    i3 = ('ココアシガレット', 30, 'img003')
+    ci1 = menu.count(i1)
+    ci2 = menu.count(i2)
+    ci3 = menu.count(i3)
+    ci4 = menu.count(i4)
+    sumi1 = ci1*10
+    sumi2 = ci2*30
+    sumi3 = ci3*30
+    sum = sumi1 + sumi2 + sumi3
     # [('うまい棒', 10, 'img001'), ('ブラックサンダー', 30, 'img002'), ('ココアシガレット', 30, 'img003')]
     # こんなのがcandidateの中身
 
-    return render_template('gacha.html', cum = cum, cbl = cbl, cco = cco, money = money, sum = sum, budget = budget)
+    return render_template('gacha.html', ci1 = cum, ci2 = cbl, ci3 = ci3, money = money, sum = sum, budget = budget)
 
-
-
+ 
         #   user_id = session["user_id"]
         # conn = sqlite3.connect("flaskapp.db")
         # c = conn.cursor()

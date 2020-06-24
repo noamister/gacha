@@ -14,20 +14,20 @@
 		<div class="flex-container">
 			<a href="/gacha/100">
 				<div class="flex-item" id="100">
-					<img src="/static/img/100en.png" alt="100">
+					<img class="yen100" src="/static/img/100en.png" alt="100">
 				</div>
 			</a>
 			<a href="/gacha/200">
 				<div class="flex-item" id="200">
-					<img src="/static/img/100en.png" alt="100">
-					<img src="/static/img/100en.png" alt="100">
+					<img class="yen100" src="/static/img/100en.png" alt="100">
+					<img class="yen100" src="/static/img/100en.png" alt="100">
 				</div>
 			</a>
 			<a href="/gacha/300">
 				<div class="flex-item" id="300">
-					<img src="/static/img/100en.png" alt="100">
-					<img src="/static/img/100en.png" alt="100">
-					<img src="/static/img/100en.png" alt="100">
+					<img class="yen100" src="/static/img/100en.png" alt="100">
+					<img class="yen100" src="/static/img/100en.png" alt="100">
+					<img class="yen100" src="/static/img/100en.png" alt="100">
 				</div>
 			</a>
 		</div>
@@ -36,24 +36,30 @@
 	
 		<div class="flex-container2">
 			<div class="flex-item2">
-				<p> 商品名 × ●円</p>
-				<p> 商品画像 × ●個</p>
-				<p> 商品名 × ●円</p>
-				<p> 商品画像 × ●個</p>
+                <p> {{  item  }} {{  price  }}円</p>
+				<p> {{  img  }} {{  count  }}個</p>
+				<p> うまい棒 １０円</p>
+				<p> imgpath {{  ci1  }}個</p>
+				<p> ブラックサンダー ３０円</p>
+				<p> imgpath {{  ci2  }}個</p>
+				<p> ココアシガレット ３０円</p>
+				<p> imgpath {{  ci3  }}個</p>
+				<!--↑こいつを複製したい-->
 			</div>
 		</div>
 
 		<div class="flex-container2">
 			<div class="flex-item2">
-				おかしは
-				<p>   ● 円</p>
-				<p> + ● 円</p>
-				<p> ---------------</p>
-				<p> {{ total }} 円</p>
-
+                おかしは                
+				<p>   {{  sumi1  }}円</p>
+				<p>   {{  sumi2  }}円</p>
+				<p> +{{  sumi3  }}円</p>
+				<p> --------</p>
+				<p> {{  total  }}円</p>
 			</div>
 
-			<div class="flex-item2">おつりは
+			<div class="flex-item2">
+                おつりは
 				<p>    {{ money }} 円</p>
 				<p>  - {{ total }} 円</p>
 				<p> ---------------</p>

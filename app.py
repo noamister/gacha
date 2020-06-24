@@ -60,8 +60,9 @@ def gacha(money):
         print(budget)
 
     #    while budget > 0 ループを抜けた後で
-    # お釣り計算
+    # お菓子の合計額は
     total = money - budget
+    # budgetはおつり
 
     # コンソールに出力しながら開発
     print("---ガチャループ終了---")
@@ -73,8 +74,29 @@ def gacha(money):
     print(budget)
     print("---")
 
+    # ここからtannnoさんのコピペ
+    i1 = ['うまい棒', 10, 'img001']
+    i2 = ['ブラックサンダー', 30, 'img002']
+    i3 = ['ココアシガレット', 30, 'img003']
+    i4 = ['ガリガリ君', 70, 'img004']
+    ci1 = menu.count(i1)
+    ci2 = menu.count(i2)
+    ci3 = menu.count(i3)
+    ci4 = menu.count(i4)
+    sumi1 = ci1*10
+    sumi2 = ci2*30
+    sumi3 = ci3*30
+    sumi4 = ci4*40
+
+    #↓ここからprintで上を確認
+    print(i1)
+    print(ci1)
+    print(sumi1)
+    # ここまでtannnoさんのコピペ
+
     # gacha.html画面に値を渡す
-    return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total)
+    # return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total)
+    return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total, ci1 = ci1, ci2 = ci2, ci3 = ci3, ci4 = ci4, sumi1 = sumi1, sumi2 = sumi2, sumi3 = sumi3, sumi4 = sumi4)
 
 
 

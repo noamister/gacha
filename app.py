@@ -102,7 +102,23 @@ def gacha(money):
 # お買い物計算ページ まだ中身はない。
 @app.route('/calc',methods=["GET", "POST"])
 def calc():
-    return render_template('calc.html')
+    if request.method == 'GET'
+'
+    
+
+
+    #↓計算部分
+    money = request.args.get('price', '')
+    price  = request.args.get('price', '')
+    change = money - price
+    #↑計算部分
+
+    #htmlから所持金＆合計金額を受け取る
+    #if所持金入力されてない→「しょじきんがにゅうりょくされてないよ！」
+    #if合計金額入力されていない→「ごうけいきんがくが入力されてないよ！」
+    #計算する
+
+    return render_template('calc.html', price = price money = money, change = change)
 
 
 

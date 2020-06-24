@@ -61,7 +61,7 @@ def gacha(money):
 
     #    while budget > 0 ループを抜けた後で
     # お釣り計算
-    budget = money - budget
+    total = money - budget
 
     # コンソールに出力しながら開発
     print("---ガチャループ終了---")
@@ -74,7 +74,7 @@ def gacha(money):
     print("---")
 
     # gacha.html画面に値を渡す
-    return render_template('gacha.html', money = money, menu = menu, budget = budget)
+    return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total)
 
 
 

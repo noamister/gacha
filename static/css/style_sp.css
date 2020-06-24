@@ -67,7 +67,7 @@ article h1 {
 	position: relative;
 	background: tomato;
 	padding: 2px 5px 2px 5px;
-	margin: 20px 50px;
+	margin: 20px 20px;
 	font-size: 20px;
 	color: white;
 	border-radius: 10px 10px 10px 10px;
@@ -78,6 +78,8 @@ article h1 {
 .flex-container {
 	/* background-color: #dfdfdf;  */
 	display: flex;
+	justify-content: space-between;
+	margin: 10px 20px;
 }
 /* 子要素(アイテム) */
 .flex-item {
@@ -88,7 +90,13 @@ article h1 {
 	border: 5px solid tomato;
 	border-radius: 10px 10px 10px 10px;
 	color: #000;
+	transition: .4s;
 }
+
+.flex-item:hover {
+  background: tomato;
+}
+
 
 /* お菓子と計算表示場所のflexbox */
 /* 親要素(コンテナ) */

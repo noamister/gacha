@@ -3,7 +3,7 @@
 {% block content %}
 
 	<header id="sec1">
-		<h1>くりかえしガチャページ</h1>
+		<h1>おかしでさんすう ガチャまわったよ</h1>
 	</header>
 
 	<article id="sec2">
@@ -11,46 +11,57 @@
 		<h1>おかしガチャで100円玉なんこ使う？</h1>
 		<img src="../static/img/gacha.png" alt="ガチャ画像">
 
-
 		<div class="flex-container">
-			<button id="bt1" class="flex-item" type="submit" name="submit_button" value="100">１こ</button>
-			<button id="bt2" class="flex-item" type="submit" name="submit_button" value="200">２こ</button>
-			<button id="bt3" class="flex-item" type="submit" name="submit_button" value="300">３こ</button>
+			<a href="/gacha/100">
+				<div class="flex-item" id="100">
+					<img src="/static/img/100en.png" alt="100">
+				</div>
+			</a>
+			<a href="/gacha/200">
+				<div class="flex-item" id="200">
+					<img src="/static/img/100en.png" alt="100">
+					<img src="/static/img/100en.png" alt="100">
+				</div>
+			</a>
+			<a href="/gacha/300">
+				<div class="flex-item" id="300">
+					<img src="/static/img/100en.png" alt="100">
+					<img src="/static/img/100en.png" alt="100">
+					<img src="/static/img/100en.png" alt="100">
+				</div>
+			</a>
 		</div>
 
-		<h1 class = "money"></h1>
-		
+		<h1> {{ money }} 円でかえるおかしは・・・</h1>
+	
 		<div class="flex-container2">
 			<div class="flex-item2">
 				<p> {{  item  }} {{  price  }}円</p>
 				<p> {{  img  }} {{  count  }}個</p>
 				<p> うまい棒 １０円</p>
-				<p> imgpath {{  cum  }}個</p>
+				<p> imgpath {{  ci1  }}個</p>
 				<p> ブラックサンダー ３０円</p>
-				<p> imgpath {{  cbl  }}個</p>
+				<p> imgpath {{  ci2  }}個</p>
 				<p> ココアシガレット ３０円</p>
-				<p> imgpath {{  cco  }}個</p>
+				<p> imgpath {{  ci3  }}個</p>
 				<!--↑こいつを複製したい-->
 			</div>
-		</div>
 
-		<div class="flex-container2">
-			<div class="flex-item2">
-				おかしは
-				<p>   {{  cum  }}円</p>
-				<p>   {{  cbl  }}円</p>
-				<p> +{{  cco  }}円</p>
-				<p> --------</p>
-				<p> {{  sum  }}円</p>
-
+			<div class="flex-container2">
+				<div class="flex-item2">
+					おかしは
+					<p>   {{  sumi1  }}円</p>
+					<p>   {{  sumi2  }}円</p>
+					<p> +{{  sumi3  }}円</p>
+					<p> --------</p>
+					<p> {{  total  }}円</p>
 			</div>
 
 			<div class="flex-item2">おつりは
-				<p>   {{  money  }} 円</p>
-				<p> -{{  sum  }} 円</p>
-				<p> --------</p>
-				<p> {{ budget }}円</p>
-
+				<p>    {{ money }} 円</p>
+				<p>  - {{ total }} 円</p>
+				<p> ---------------</p>
+				<p>   {{ budget }} 円</p>
 			</div>
 		</div>
 

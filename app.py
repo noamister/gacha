@@ -4,7 +4,16 @@ import sqlite3
 # randomを使えるようにする
 import random
 # flaskをimportしてflaskを使えるようにする
-from flask import Flask , render_template , request , redirect , session
+from flask import Flask , render_template , request , redirect , session , url_for
+# ファイル名をチェックする関数
+from werkzeug.utils import secure_filename
+# 画像のダウンロード
+from flask import send_from_directory
+# 画像のアップロード先のディレクトリ
+UPLOAD_FOLDER = './uploads'
+# アップロードされる拡張子の制限
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'gif'])
+
 # appにFlaskを定義して使えるようにしています。Flask クラスのインスタンスを作って、 app という変数に代入しています。
 app = Flask(__name__)
 
@@ -102,24 +111,29 @@ def gacha(money):
     sumi2 = 0
     sumi3 = 0
     sumi4 = 0
+    sumi5 = 0
     list1=[]
     list2=[]
     list3=[]
     list4=[]
+    list5=[]
 
     # ここからtannnoさんのコピペ タプルに変更
     i1 = ('うまい棒', 10, 'img001')
     i2 = ('ブラックサンダー', 30, 'img002')
     i3 = ('ココアシガレット', 30, 'img003')
     i4 = ('ガリガリ君', 75, 'img004')
+    i5 = ('ハーゲンダッツ', 275, 'img005')
     ci1 = menu.count(i1)
     ci2 = menu.count(i2)
     ci3 = menu.count(i3)
     ci4 = menu.count(i4)
+    ci5 = menu.count(i5)
     sumi1 = ci1*10
     sumi2 = ci2*30
     sumi3 = ci3*30
     sumi4 = ci4*75
+    sumi5 = ci5*275
  
     #↓ここからprintで上を確認
     print(i1)
@@ -139,7 +153,9 @@ def gacha(money):
     for i in range(ci4):
         list4.append(4)
     print(list4)
-
+    for i in range(ci5):
+        list5.append(5)
+    print(list5)
     # お釣りbudgetを、紙幣とコインで表示する。
 
     bill10000 = int(budget / 10000)
@@ -172,12 +188,18 @@ def gacha(money):
     print(coin5)
     print(coin1)
 
+    # おつりが五円か0円かでトレイイメージを変更する。
+
+    if coin5 == 1:
+        tray_image = ('../static/img/tray5yen.png')
+        # tray_image = ../static/img/tray5yen.png
+    else:
+        tray_image = ('../static/img/tray.png')
+        # tray_image = ../static/img/tray.png
+    
     # gacha.html画面に値を渡す
     # return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total)
-    return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total, ci1 = ci1, ci2 = ci2, ci3 = ci3, ci4 = ci4, sumi1 = sumi1, sumi2 = sumi2, sumi3 = sumi3, sumi4 = sumi4, list1 = list1, list2 = list2, list3 = list3, list4 = list4, bill10000 = bill10000, bill5000 = bill5000 ,bill1000 = bill1000, coin500 = coin500,coin100 = coin100,coin50 = coin50,coin10 = coin10, coin5 = coin5, coin1 = coin1)
-
-
-
+    return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total, ci1 = ci1, ci2 = ci2, ci3 = ci3, ci4 = ci4, ci5 = ci5, sumi1 = sumi1, sumi2 = sumi2, sumi3 = sumi3, sumi4 = sumi4, sumi5 = sumi5, list1 = list1, list2 = list2, list3 = list3, list4 = list4, list5 = list5, bill10000 = bill10000, bill5000 = bill5000 ,bill1000 = bill1000, coin500 = coin500,coin100 = coin100,coin50 = coin50,coin10 = coin10, coin5 = coin5, coin1 = coin1, tray_image = tray_image)
 
 # お買い物計算ページ まだ中身はない。
 @app.route('/calc',methods=["GET", "POST"])

@@ -57,7 +57,12 @@
                 {% for i in list4 %}
                     <img class="foodImg" src="/static/img/img004.jpg" alt="ガリガリ君img">
                 {% endfor %}
-                
+
+                <p> ハーゲンダッツ {{  ci5  }}個 X ２７５円 = {{  sumi5  }}円</p>
+                {% for i in list5 %}
+                    <img class="foodImg" src="/static/img/img005.jpg" alt="ハーゲンダッツimg">
+                {% endfor %}
+                                
 				<!--↑こいつを複製したい-->
 			</div>
 		</div>
@@ -68,7 +73,8 @@
 				<p>   {{  sumi1  }}円</p>
 				<p>   {{  sumi2  }}円</p>
 				<p>   {{  sumi3  }}円</p>
-				<p> + {{  sumi4  }}円</p>
+				<p>   {{  sumi4  }}円</p>
+				<p> + {{  sumi5  }}円</p>
 				<p> --------</p>
 				<p> {{  total  }}円</p>
 			</div>
@@ -84,9 +90,13 @@
 		</div>
 
 
-		<h1>おつりもどうぞ！</h1>
-		<img  class="trayImg" src="../static/img/tray.png" alt="トレイ画像">
+        <h1>おつりもどうぞ！</h1>
 
+        <img  class="trayImg" src="{{tray_image}}" alt="トレイ画像">
+<!--         
+		<img  class="trayImg" src="../static/img/tray.png" alt="トレイ画像">
+		<img  class="trayImg" src="../static/img/tray5yen.png" alt="トレイ画像">
+ -->
 		<a href="/calc" class="btn-flat-double-border">▶︎こっちでおかいもののけいさんもできるよ！</a>
 
 	</article>

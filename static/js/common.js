@@ -216,8 +216,31 @@ $(function () {  // ここはお約束
   // });
 
 
-
-
+  $("#id100").hover(
+    function () {
+    $("#choice100").addClass("apper");
+    },
+    function () {
+    $("#choice100").removeClass("apper");
+    }
+  );
+    
+  $("#id200").hover(
+    function () {
+    $("#choice200").addClass("apper");
+    },
+    function () {
+    $("#choice200").removeClass("apper");
+    }
+  );
+  $("#id300").hover(
+    function () {
+    $("#choice300").addClass("apper");
+    },
+    function () {
+    $("#choice300").removeClass("apper");
+    }
+  );
 
   /////////////////////////////
   // ここから課題のサンプルコード//

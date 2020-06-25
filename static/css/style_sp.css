@@ -102,6 +102,20 @@ article h1 {
 	/* width: 50px; */
 }
 
+
+.choice {
+	display: none;
+}
+
+.apper {
+	display: block;
+}
+
+/*  ホバー時に別要素に影響与えられる + や > は、親子や隣の関係だけだった
+	#id100:hover + #choice100 {
+	display: block;
+} */
+
 /* お菓子と計算表示場所のflexbox */
 /* 親要素(コンテナ) */
 .flex-container2 {
@@ -123,7 +137,7 @@ article h1 {
 }
 
 .foodImg {
-	width: 9%;
+	width: 15%;
 	height: auto;
 
 }

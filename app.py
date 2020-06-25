@@ -140,9 +140,42 @@ def gacha(money):
         list4.append(4)
     print(list4)
 
+    # お釣りbudgetを、紙幣とコインで表示する。
+
+    bill10000 = int(budget / 10000)
+    budget = budget % 10000
+    bill5000 = int(budget / 5000)
+    budget = budget % 50000
+    bill1000 = int(budget / 1000)
+    budget = budget % 10000
+    coin500 = int(budget / 500)
+    budget = budget % 5000
+    coin500 = int(budget / 500)
+    budget = budget % 5000
+    coin100 = int(budget / 100)
+    budget = budget % 100
+    coin50 = int(budget / 50)
+    budget = budget % 50
+    coin10 = int(budget / 10)
+    budget = budget % 10
+    coin5 = int(budget / 5)
+    coin1 = budget % 5
+
+    print("紙幣とコイン枚数 1万、5千、千、500、100、50、10、５、１の順")
+    print(bill10000)
+    print(bill5000)
+    print(bill1000)
+    print(coin500)
+    print(coin100)
+    print(coin50)
+    print(coin10)
+    print(coin5)
+    print(coin1)
+
     # gacha.html画面に値を渡す
     # return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total)
-    return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total, ci1 = ci1, ci2 = ci2, ci3 = ci3, ci4 = ci4, sumi1 = sumi1, sumi2 = sumi2, sumi3 = sumi3, sumi4 = sumi4, list1 = list1, list2 = list2, list3 = list3, list4 = list4)
+    return render_template('gacha.html', money = money, menu = menu, budget = budget, total = total, ci1 = ci1, ci2 = ci2, ci3 = ci3, ci4 = ci4, sumi1 = sumi1, sumi2 = sumi2, sumi3 = sumi3, sumi4 = sumi4, list1 = list1, list2 = list2, list3 = list3, list4 = list4, bill10000 = bill10000, bill5000 = bill5000 ,bill1000 = bill1000, coin500 = coin500,coin100 = coin100,coin50 = coin50,coin10 = coin10, coin5 = coin5, coin1 = coin1)
+
 
 
 

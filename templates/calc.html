@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<header id="sec1">
+    <h1>おかいものけいさん</h1>
+</header>
+
+<article id="sec2">
+
+    <h1>おかいものをして、おつりをうけとろう！</h1>
+    
+
+    <div class="flex-item3">
+        <p>おみせのひとにわたすおかね 
+            <!--postToPython-->
+            <form name="cMoney" method="POST" action="/calc">
+            <input type="number" value="{{cMoney}}" name="cMoney" >円
+            
+            <!---コイン選択-->
+            
+        
+        <p></p>
+        かうもののねだん
+            <!--postToPython-->
+
+            <input type="number" value="{{cTotal}}" name="cTotal" >円
+            <input href="#return" type="submit" class="btn-flat-double-border">▶︎おつりをけいさん！
+            </form>
+            
+        </p>
+
+    </div>
+
+    
+
+
+
+    <h1 id="return">うけとるおつりは・・・？</h1>
+
+        <div class="flex-item3">
+            <p>おつりは</p>
+            <p>   {{  cMoney  }} えん</p>
+            <p> - {{  cTotal  }} えん</p>
+            <p> --------</p>
+            <p> {{  change  }}円</p>
+        </div>
+
+        <div class="flex-item3">
+            <p>１００えん{{  coin100  }}こ</p>
+            {% for i in list5 %}
+            <img class="foodImg" src="/static/img/100en.png" alt="100えんimg">
+        {% endfor %}
+            <p>５０えん{{  coin50  }}こ</p>
+            {% for i in list6 %}
+            <img class="foodImg" src="/static/img/50en.png" alt="50えんimg">
+        {% endfor %}
+            <p>１０えん{{  coin10  }}こ</p>
+            {% for i in list7 %}
+            <img class="foodImg" src="/static/img/10en.png" alt="10enimg">
+        {% endfor %}
+            <p>５えん{{  coin8  }}こ</p>
+            {% for i in list1 %}
+            <img class="foodImg" src="/static/img/5en.png" alt="5enimg">
+        {% endfor %}
+            <p>１えん{{  coin1  }}こ</p>
+            {% for i in list9 %}
+            <img class="foodImg" src="/static/img/1en.png" alt="1enimg">
+        {% endfor %}            
+            <img  class="trayImg" src="../static/img/tray.png" alt="トレイ画像">
+        </div>
+
+   
+    <a href="../" class="btn-flat-double-border">▶︎もういちど、ガチャをまわす！</a>
+
+</article>
+
+
+
+{% endblock %}

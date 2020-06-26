@@ -1,0 +1,233 @@
+@charset "UTF-8";
+html {
+	overflow-y: scroll; /* IEへの対応 http://www.htmq.com/style/overflow-y.shtml */
+	/*Internet Explorerが独自に追加したプロパティ*/
+	/*画面に収まりきれなかったときにスクロールして表示することを許可するか否か*/
+}
+body, h1, h2, h3, h4, h5, p, ul, ol, li, dl, dt, dd {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background: #fff;
+	text-align: center;
+	font-size: 16px;
+	line-height: 1.4;
+	min-width: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+li {
+	list-style: none;
+}
+a {
+	outline: none;
+	color: inherit;
+	text-decoration: none;
+}
+img {
+	border: 0px;
+	vertical-align: bottom;
+}
+body {
+	font-family: "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", "Meiryo", "HGPｺﾞｼｯｸM", "Osaka", "ＭＳ Ｐゴシック", sans-serif, Century Gothic, Arial;
+}
+
+footer {
+	height: 80px;
+	background: #eeeaec;
+}
+footer .copyright {
+	color: #acacac;
+	font-size: 12px;
+	padding-top: 30px;
+	letter-spacing: 1px;
+}
+/* ここまでがリセットCSSかな？ */
+
+/* 全体背景を黄色に */
+body{
+	background: yellow;
+  }
+
+/* ヘッダーの画像 */
+#sec1 {
+	background: url(../img/shutterstock_1081197068.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+/* ヘッダーの文字 */
+#sec1 h1 {
+	font-size: 30px;
+	color: tomato;
+	padding: 20px;
+}
+
+/* 見出しのCSS このh1の先頭にクッキー画像を載せたい */
+article h1 {
+	position: relative;
+	background: tomato;
+	padding: 2px 5px 2px 5px;
+	margin: 20px 20px;
+	font-size: 20px;
+	color: white;
+	border-radius: 10px 10px 10px 10px;
+  }
+
+/* 金額選択場所のflexbox */
+/* 親要素(コンテナ) */
+.flex-container {
+	/* background-color: #dfdfdf;  */
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 20px;
+}
+/* 子要素(アイテム) */
+.flex-item {
+	margin: 10px auto;
+	padding: 5px;
+	box-sizing: border-box;
+	background-color: #fff;
+	border: 5px solid tomato;
+	border-radius: 10px 10px 10px 10px;
+	color: #000;
+	transition: .4s;
+}
+
+.flex-item:hover {
+  background: tomato;
+}
+
+.yen100 {
+	position: relative;
+	/* width: 50px; */
+}
+
+/* お菓子と計算表示場所のflexbox */
+/* 親要素(コンテナ) */
+.flex-container2 {
+	/* background-color: #dfdfdf;  */
+	display: flex;
+}
+/* 子要素(アイテム) */
+.flex-item2 {
+	margin: 10px auto;
+	padding: 5px 20px;
+	/* box-sizing: border-box; */
+	width: 100%;
+	height: auto;
+	margin: 10px 20px;
+	background-color: #fff;
+	border: 2px solid tomato;
+	border-radius: 10px 10px 10px 10px;
+	color: #000;
+}
+
+.foodImg {
+	width: 9%;
+	height: auto;
+
+}
+section {
+	padding: 50px 15px;
+	text-align: left;
+}
+section h1 {
+	font-size: 20px;
+	line-height: 35px;
+	margin: 0 0 40px 0;
+	font-weight: 200;
+}
+
+/* トレイ画像を大きく表示 */
+.trayImg {
+	position: center;
+	width: 50%;
+}
+
+/* ページ遷移ボタン */
+.btn-flat-double-border {
+	display: inline-block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	background-color: tomato;
+	color: white;
+	border: double 4px white;
+	border-radius: 5px;
+	transition: .4s;
+  }
+  .btn-flat-double-border:hover {
+	background: #0ef106;
+  }
+
+
+
+/* ここからcalc画面 */
+
+.flex-item3 {
+	/* margin: 10px auto; */
+	padding: 5px 20px;
+	/* box-sizing: border-box; */
+	/* width: 100%; */
+	height: auto;
+	margin: 10px 20px;
+	background-color: #fff;
+	border: 2px solid tomato;
+	border-radius: 10px 10px 10px 10px;
+	color: #000;
+}
+
+
+
+/* 
+ここから下は使ってないよ。flex課題のコピペの残骸
+*/
+
+/* #sec2 .flex_area div {
+	text-align: left;
+}
+#sec2 .flex_area div h2 {
+	font-size: 14px;
+	margin: 30px 0 10px 0;
+}
+#sec2 .flex_area div p {
+	font-size: 12px;
+	line-height: 1.8;
+	margin-bottom: 14px;
+}
+#sec3 {
+	background: url(../img/photo_02.png) no-repeat center center;
+	background-size: cover;
+	color: #fff;
+}
+
+#sec3 p {
+	font-size: 13px;
+	line-height: 2;
+	margin-bottom: 16px;
+}
+#sec3 p br {
+	display: none;
+}
+
+#sec4 .port .flex_reverse{
+	display: flex;
+	flex-direction: column-reverse;  *flexは様々な方向に並び替えが可能です*
+}
+
+#sec4 p {
+	font-size: 12px;
+	line-height: 1.8;
+	margin-bottom: 55px;
+}
+#sec4 p br {
+	display: none;
+}
+
+#sec4 .port .portfolio img {
+	width: 100%;
+}
+
+#sec4 .port .port_title{
+	font-size:14px;
+	margin:10px 0;
+} */
